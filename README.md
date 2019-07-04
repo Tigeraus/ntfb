@@ -1,4 +1,4 @@
-# ntfb
+# ntfb 
 A notification bot for running python functions or code blocks, requiring a telegram bot token and chatID.
 
 
@@ -11,6 +11,12 @@ Set env variables:
 ~~~zsh
 export JUPYBOT_TOKEN='yourtoken'
 export JUPYBOT_CHATID='yourchatid'
+~~~
+
+Install [ntfb](https://pypi.org/project/ntfb/):
+
+~~~zsh
+pip install ntfb
 ~~~
 
 Use it in the end of code blocks or as a decorator:
