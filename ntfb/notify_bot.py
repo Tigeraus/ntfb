@@ -31,17 +31,14 @@ class NtfBot:
         try:
             msg = '\"'+code_message+ '\" from ' + socket.gethostname() +\
                 ' at ' + str(datetime.datetime.now())
-            self._telegram_bot_sendtext(msg)
+            self._telegram_bot_sendtext(msg, self.bot_token, self.bot_chatID)
         except Exception as e:
             print(e)
         pass
 
 
     @staticmethod    
-    def _telegram_bot_sendtext(bot_message):
-        
-        bot_token = '868875198:AAEbmuyzBdu3BK-h2pKuCc9vVFNGzE0WqlY'
-        bot_chatID = '313426050'
+    def _telegram_bot_sendtext(bot_message, bot_token, bot_chatID):
         send_text = 'https://api.telegram.org/bot' + bot_token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
 
         response = requests.get(send_text)
